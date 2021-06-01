@@ -1,0 +1,21 @@
+{
+  "name": "wetube2021",
+  "version": "1.0.0",
+  "description": "The best way to watch videos.",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/chocodigo/wetube-roloded.git"
+  },
+  "scripts": {
+    "start": "node index.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/chocodigo/wetube-roloded/issues"
+  },
+  "homepage": "https://github.com/chocodigo/wetube-roloded#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
