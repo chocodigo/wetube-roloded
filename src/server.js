@@ -8,6 +8,10 @@ const logger = morgan("dev");
 
 // application setting
 
+const globalRouter = express.Router(); // 홈에서 바로 갈 수 있는 페이지들
+const userRouter = express.Router();
+const videoRouter = express.Router();
+
 const handleHome = (req, res) => {
   return res.send("I love middlewares");
 };
