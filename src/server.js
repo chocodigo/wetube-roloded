@@ -1,5 +1,8 @@
 import express from "express";
 import morgan from "morgan";
+import globalRouter from "./routers/globalRouter";
+import videoRouter from "./routers/videoRouter";
+import userRouter from "./routers/userRouter";
 
 const PORT = 4000;
 
@@ -8,10 +11,6 @@ const logger = morgan("dev");
 app.use(logger);
 
 // application setting
-
-const globalRouter = express.Router(); // 홈에서 바로 갈 수 있는 페이지들
-const userRouter = express.Router();
-const videoRouter = express.Router();
 
 app.use("/", globalRouter);
 app.use("/videos", videoRouter);
