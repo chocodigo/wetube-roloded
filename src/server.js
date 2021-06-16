@@ -8,10 +8,9 @@ const PORT = 4000;
 
 const app = express(); //express application을 만듦
 const logger = morgan("dev");
+
+app.set("view engine", "pug");
 app.use(logger);
-
-// application setting
-
 app.use("/", globalRouter);
 app.use("/videos", videoRouter);
 app.use("/users", userRouter);
