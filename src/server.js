@@ -5,7 +5,6 @@ import videoRouter from "./routers/videoRouter";
 import userRouter from "./routers/userRouter";
 
 const PORT = 4000;
-
 const app = express(); //express application을 만듦
 const logger = morgan("dev");
 
