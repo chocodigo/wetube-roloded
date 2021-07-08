@@ -1,3 +1,4 @@
+import "./db";
 import express from "express";
 import morgan from "morgan";
 import globalRouter from "./routers/globalRouter";
@@ -20,6 +21,6 @@ app.use("/users", userRouter);
 
 // 외부 접속 listen
 const handleListening = () =>
-  console.log(`Server Listening on port http://localhost:${PORT} 🔈`);
+  console.log(`✅ Server Listening on port http://localhost:${PORT} 🔈`);
 
 app.listen(PORT, handleListening); // 4000 포트 , handleListening callback
