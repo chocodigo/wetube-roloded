@@ -4,11 +4,11 @@ const videoSchema = new mongoose.Schema({
   //데이터 형식
   title: String,
   description: String,
-  createdAt: Date,
+  createdAt: { type: Date, required: true, default: Date.now },
   hashtags: [{ type: String }],
   meta: {
-    views: Number,
-    rating: Number,
+    views: { type: Number, default: 0, required: true },
+    rating: { type: Number, default: 0, required: true },
   },
 });
 
