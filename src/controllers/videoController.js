@@ -13,23 +13,34 @@ export const home = async (req, res) => {
   }
 };
 
-export const watch = (req, res) => {
+export const watch = async (req, res) => {
   const { id } = req.params;
-  return res.render("watch", { pageTitle: `Watching` });
+  const video = await Video.findById(id);
+  if (!video) return res.render("404", { pageTitle: "Video not found." });
+  return res.render("watch", { pageTitle: video.title, video });
 };
 
 // form을 화면에 보여줌
-export const getEdit = (req, res) => {
+export const getEdit = async (req, res) => {
   const { id } = req.params;
+  const video = await Video.findById(id);
+  if (!video) return res.render("404", { pageTitle: "Video not found." });
 
-  return res.render("edit", { pageTitle: `Editing` });
+  return res.render("edit", { pageTitle: `Edit: ${video.title}`, video });
 };
 
 // 변경사항을 저장해줌
-export const postEdit = (req, res) => {
+export const postEdit = async (req, res) => {
   const { id } = req.params;
-  const { title } = req.body;
-
+  const { title, description, hashtags } = req.body;
+  const video = await Video.findById(id);
+  if (!video) return res.render("404", { pageTitle: "Video not found." });
+  video.title = title;
+  video.description = description;
+  video.hashtags = hashtags
+    .split(",")
+    .map((word) => (word.startsWith("#") ? word : `#${word}`));
+  await video.save();
   return res.redirect(`/videos/${id}`);
 };
 
