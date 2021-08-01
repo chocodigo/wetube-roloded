@@ -1,8 +1,9 @@
 // 모든 것을 초기화 시켜줌
 // import 담당
+import "dotenv/config";
 import "./db";
 import "./models/Video";
-import './models/User';
+import "./models/User";
 import app from "./server";
 
 const PORT = 4000;
