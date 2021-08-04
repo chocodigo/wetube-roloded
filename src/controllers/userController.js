@@ -40,8 +40,6 @@ export const postJoin = async (req, res) => {
   return res.redirect("/login");
 };
 
-export const edit = (req, res) => res.send("Edit User");
-
 export const getLogin = (req, res) =>
   res.render("login", { pageTitle: "Login" });
 
@@ -75,6 +73,7 @@ export const postLogin = async (req, res) => {
   return res.redirect("/");
 };
 
+//github에 정보를 보냄
 export const startGithubLogin = (req, res) => {
   const baseUrl = "https://github.com/login/oauth/authorize";
   const config = {
@@ -88,12 +87,13 @@ export const startGithubLogin = (req, res) => {
   return res.redirect(finalUrl);
 };
 
+//github에서 설정한 callback 함수
 export const finishGithubLogin = async (req, res) => {
   const baseUrl = "https://github.com/login/oauth/access_token";
   const config = {
     client_id: process.env.GH_CLIENT,
     client_secret: process.env.GH_SECRET,
-    code: req.query.code,
+    code: req.query.code, //user accepted
   };
   const params = new URLSearchParams(config).toString();
 
@@ -160,4 +160,11 @@ export const logout = (req, res) => {
 export const see = (req, res) => {
   console.log("id : ", req.params);
   return res.send("See");
+};
+
+export const getEdit = (req, res) => {
+  return res.render("edit-profile", { pageTitle: "Edit Profile" });
+};
+export const postEdit = (req, res) => {
+  return res.render("edit-profie");
 };
