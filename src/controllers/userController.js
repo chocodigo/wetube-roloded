@@ -194,3 +194,9 @@ export const postEdit = async (req, res) => {
   }
   return res.redirect("/users/edit");
 };
+
+export const getChangePassword = (req, res) => {
+  return res.render;
+};
+
+export const postChangePassword = (req, res) => {};
