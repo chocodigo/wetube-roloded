@@ -157,6 +157,38 @@ export const logout = (req, res) => {
   req.session.destroy();
   return res.redirect("/");
 };
+export const getChangePassword = (req, res) => {
+  if (req.session.user.socialOnly === true) {
+    return res.redirect("/");
+  }
+  return res.render("users/change-password", { pageTitle: "Change Password" });
+};
+
+export const postChangePassword = async (req, res) => {
+  const {
+    session: {
+      user: { _id },
+    },
+    body: { oldPassword, newPassword, newPasswordConfirmation },
+  } = req;
+  const user = await User.findById(_id);
+  const ok = await bcrypt.compare(oldPassword, user.password);
+  if (!ok) {
+    return res.status(400).render("users/change-password", {
+      pageTitle: "Change Password",
+      errorMessage: "The current password is incorrect",
+    });
+  }
+  if (newPassword !== newPasswordConfirmation) {
+    return res.status(400).render("users/change-password", {
+      pageTitle: "Change Password",
+      errorMessage: "The password does not match the confirmation",
+    });
+  }
+  user.password = newPassword;
+  await user.save();
+  return res.redirect("/users/logout");
+};
 
 export const see = (req, res) => {
   console.log("id : ", req.params);
@@ -166,22 +198,19 @@ export const see = (req, res) => {
 export const getEdit = (req, res) => {
   return res.render("edit-profile", { pageTitle: "Edit Profile" });
 };
+
 export const postEdit = async (req, res) => {
   const {
-    session: { user },
+    session: { user : {_id,avatarUrl} },
     body: { name, email, username, location },
+    file
   } = req;
 
-  const existsUsername = await User.exists({ username });
-  const existsEmail = await User.exists({ email });
 
-  if (
-    (user.username !== username && !existsUsername) ||
-    (user.email !== email && !existsEmail)
-  ) {
     const updatedUser = await User.findByIdAndUpdate(
-      user._id,
+      _id,
       {
+        avatarUrl: file ? file.path : avatarUrl,
         name,
         email,
         username,
@@ -191,12 +220,7 @@ export const postEdit = async (req, res) => {
     );
     //session에도 업데이트
     req.session.user = updatedUser;
-  }
+
+
   return res.redirect("/users/edit");
 };
-
-export const getChangePassword = (req, res) => {
-  return res.render;
-};
-
-export const postChangePassword = (req, res) => {};
