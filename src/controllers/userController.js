@@ -190,37 +190,44 @@ export const postChangePassword = async (req, res) => {
   return res.redirect("/users/logout");
 };
 
-export const see = (req, res) => {
-  console.log("id : ", req.params);
-  return res.send("See");
-};
-
 export const getEdit = (req, res) => {
   return res.render("edit-profile", { pageTitle: "Edit Profile" });
 };
 
 export const postEdit = async (req, res) => {
   const {
-    session: { user : {_id,avatarUrl} },
+    session: {
+      user: { _id, avatarUrl },
+    },
     body: { name, email, username, location },
-    file
+    file,
   } = req;
 
-
-    const updatedUser = await User.findByIdAndUpdate(
-      _id,
-      {
-        avatarUrl: file ? file.path : avatarUrl,
-        name,
-        email,
-        username,
-        location,
-      },
-      { new: true }
-    );
-    //session에도 업데이트
-    req.session.user = updatedUser;
-
+  const updatedUser = await User.findByIdAndUpdate(
+    _id,
+    {
+      avatarUrl: file ? file.path : avatarUrl,
+      name,
+      email,
+      username,
+      location,
+    },
+    { new: true }
+  );
+  //session에도 업데이트
+  req.session.user = updatedUser;
 
   return res.redirect("/users/edit");
+};
+
+export const see = async (req, res) => {
+  const { id } = req.params;
+  const user = await User.findById(id);
+  if (!user) {
+    return res.status(404).render("404", { pageTitle: "User not fuond." });
+  }
+  return res.render("users/profile", {
+    pageTitle: `${user.username}`,
+    user,
+  });
 };
