@@ -5,6 +5,7 @@
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/assets/js/videoPlayer.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/videoPlayer.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/client/js/videoPlayer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/client/js/videoPlayer.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/watch.pug" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/watch.pug" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -35,7 +36,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1631163965848</updated>
-      <workItem from="1631163967061" duration="7928000" />
+      <workItem from="1631163967061" duration="8919000" />
     </task>
     <servers />
   </component>
