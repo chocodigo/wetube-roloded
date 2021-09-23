@@ -43,6 +43,15 @@ const handleDownload = async () => {
   thumbA.download = "MyThumbnail.jpg"; // 해당 URL을 다운로드하는 것
   document.body.appendChild(thumbA);
   thumbA.click();
+
+  ffmpeg.FS('unlink','recording.webm');
+  ffmpeg.FS('unlink','output.mp4');
+  ffmpeg.FS('unlink','thumbnail.jpg');
+
+  URL.revokeObjectURL(mp4Url);
+  URL.revokeObjectURL(thumbUrl);
+  URL.revokeObjectURL(videoFile);
+
 };
 
 const handleStop = () => {
