@@ -3,9 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="8bb7aabc-1ce2-43fd-89b0-fb01a74108d4" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/js/videoPlayer.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/videoPlayer.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/client/js/videoPlayer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/client/js/videoPlayer.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/views/watch.pug" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/watch.pug" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/client/js/recorder.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/client/js/recorder.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
