@@ -7,6 +7,7 @@ import videoRouter from "./routers/videoRouter";
 import userRouter from "./routers/userRouter";
 import { localsMiddleware } from "./middlewares";
 import apiRouter from "./routers/apiRouter";
+import flash from "express-flash";
 
 const app = express(); //express application을 만듦
 const logger = morgan("dev");
@@ -26,6 +27,12 @@ app.use(
   })
 );
 
+app.use((req, res, next) => {
+  res.header("Cross-Origin-Embedder-Policy", "require-corp");
+  res.header("Cross-Origin-Opener-Policy", "same-origin");
+  next();
+});
+app.use(flash());
 app.use(localsMiddleware);
 app.use("/uploads", express.static("uploads"));
 app.use(
@@ -33,11 +40,6 @@ app.use(
   express.static("assets"),
   express.static("node_modules/@ffmpeg/core/dist")
 );
-app.use((req, res, next) => {
-  res.header("Cross-Origin-Embedder-Policy", "require-corp");
-  res.header("Cross-Origin-Opener-Policy", "same-origin");
-  next();
-});
 app.use("/", rootRouter);
 app.use("/videos", videoRouter);
 app.use("/users", userRouter);
