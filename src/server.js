@@ -7,7 +7,7 @@ import videoRouter from "./routers/videoRouter";
 import userRouter from "./routers/userRouter";
 import { localsMiddleware } from "./middlewares";
 import apiRouter from "./routers/apiRouter";
-import flash from "express-flash";
+import flash from "express-flash";  // pug에서 플래시메시지
 
 const app = express(); //express application을 만듦
 const logger = morgan("dev");

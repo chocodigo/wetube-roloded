@@ -3,10 +3,10 @@
   <component name="ChangeListManager">
     <list default="true" id="8bb7aabc-1ce2-43fd-89b0-fb01a74108d4" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/controllers/videoController.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/controllers/videoController.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/controllers/userController.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/controllers/userController.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/models/Comment.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/models/Comment.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/models/Video.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/models/Video.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/routers/videoRouter.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/routers/videoRouter.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/views/mixins/video.pug" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/mixins/video.pug" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/server.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/server.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -23,6 +23,7 @@
   </component>
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_package_manager_path" value="npm" />
@@ -38,16 +39,16 @@
       <option name="presentableId" value="Default" />
       <updated>1631163965848</updated>
       <workItem from="1631163967061" duration="8919000" />
+      <workItem from="1638771655019" duration="4685000" />
+      <workItem from="1638864510548" duration="15000" />
+      <workItem from="1638890932610" duration="5109000" />
+      <workItem from="1639033449573" duration="7916000" />
+      <workItem from="1639323564516" duration="4705000" />
+      <workItem from="1639457903976" duration="2316000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
-  </component>
-  <component name="WindowStateProjectService">
-    <state x="461" y="164" key="SettingsEditor" timestamp="1631164110402">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="461" y="164" key="SettingsEditor/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1631164110402" />
   </component>
 </project>
